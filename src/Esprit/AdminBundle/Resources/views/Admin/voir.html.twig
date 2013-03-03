@@ -1,0 +1,36 @@
+ {# src/esprit/AdminBundle/Resources/views/Admin/voir.html.twig #}
+ 
+{% extends "EspritAdminBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Lecture d'un article - {{ parent() }}
+{% endblock %}
+{% block espritadmin_body %}
+<h2>
+  {# On vérifie qu'une image soit bien associée à l'article #}
+  {% if manager.image is not null %}
+    <img src="{{ manager.image.url }}" alt="{{ manager.image.alt }}" />
+  {% endif %}
+
+</h2>
+ <div class="well">
+  <h2>{{ manager.nom }} {{ manager.prenom }} </h2>
+  <i>  service {{ manager.service }} , ajouter le {{ manager.date|date('d/m/Y') }}</i>
+ </div>
+ 
+  <p>
+    <a href="{{ path('espritadmin_accueil') }}" class="btn">
+      <i class="icon-chevron-left"></i>
+      Retour à la liste
+    </a>
+    <a href="{{ path('espritadmin_modifier', {'id': manager.id}) }}" class="btn">
+      <i class="icon-edit"></i>
+      Modifier Manger
+    </a>
+    <a href="{{ path('espritadmin_supprimer', {'id': manager.id}) }}" class="btn">
+      <i class="icon-trash"></i>
+      Supprimer Manager
+    </a>
+  </p>
+ 
+{% endblock %}

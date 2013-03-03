@@ -1,0 +1,4 @@
+
+esprit_admin:
+    resource: "@EspritAdminBundle/Resources/config/routing.yml"
+    prefix: /admin

@@ -1,0 +1,27 @@
+{# src/Esprit/AdminBundle/Resources/views/Admin/supprimer.html.twig #}
+ 
+{% extends "EspritAdminBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Supprimer un manager- {{ parent() }}
+{% endblock %}
+ 
+{% block  espritadmin_body %}
+ 
+  <h2>Supprimer un Manger</h2>
+ 
+  <p>
+    Etes-vous certain de vouloir supprimer ce Manger "{{ manager.nom }} {{ manager.prenom }} " ?
+  </p>
+ 
+  {# On met l'id de Manager dans la route de l'action du formulaire #}
+  <form action="{{ path('espritadmin_supprimer', {'id': manager.id}) }}" method="post">
+    <a href="{{ path('espritadmin_voir', {'id': manager.id}) }}" class="btn">
+      <i class="icon-chevron-left"></i>
+      Retour à Manager
+    </a>
+    <input type="submit" value="Supprimer" class="btn btn-danger" />
+    {{ form_rest(form) }}
+  </form>
+ 
+{% endblock %}

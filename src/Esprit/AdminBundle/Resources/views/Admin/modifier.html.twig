@@ -1,0 +1,24 @@
+ {# src/esprit/AdminBundle/Resources/views/Admin/modifier.html.twig #}
+
+{% extends "EspritAdminBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Modifier un Manager - {{ parent() }}
+{% endblock %}
+ 
+{% block espritadmin_body %}
+ 
+  <h2>Modifier un Manager </h2>
+ 
+  {% include "EspritAdminBundle:Admin:formulaire.html.twig" %}
+ 
+  
+ 
+  <p>
+    <a href="{{ path('espritadmin_voir', {'id': manager.id}) }}" class="btn">
+      <i class="icon-chevron-left"></i>
+      Retour à la Description de Manager
+    </a>
+  </p>
+ 
+{% endblock %}

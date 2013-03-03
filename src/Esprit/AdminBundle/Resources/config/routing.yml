@@ -1,0 +1,21 @@
+# src/Esprit/AdminBundle/Resources/config/routing.yml
+ 
+espritadmin_accueil:
+    pattern: /
+    defaults: { _controller: EspritAdminBundle:Admin:index }
+espritadmin_voir: 
+    pattern: /manager/{id}
+    defaults:  { _controller: EspritAdminBundle:Admin:voir }
+espritadmin_ajouter: 
+    pattern: /ajouter
+    defaults:  { _controller: EspritAdminBundle:Admin:ajouter }  
+espritadmin_modifier:
+    pattern: /modifier/{id}
+    defaults:  { _controller: EspritAdminBundle:Admin:modifier }
+    requirements:
+        id:  \d+ 
+espritadmin_supprimer:
+    pattern: /supprimer/{id}
+    defaults:  { _controller: EspritAdminBundle:Admin:supprimer }
+    requirements:
+        id:  \d+ 

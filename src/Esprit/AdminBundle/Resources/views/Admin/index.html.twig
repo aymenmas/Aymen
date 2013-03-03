@@ -1,0 +1,27 @@
+{# src/Esprit/AdminBundle/Resources/views/Admin/index.html.twig #}
+ 
+ 
+{% extends "EspritAdminBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Admin - {{ parent() }}
+{% endblock %}
+ 
+{% block espritadmin_body %}
+ 
+  <h2>Liste des Managers </h2>
+ 
+  <ul>
+    {% for manager in managers %}
+      <li>
+        <a href="{{ path('espritadmin_voir', {'id': manager.id}) }}">{{ manager.nom }} {{ manager.prenom }}</a>
+         service :{{manager.service }},
+        le {{ manager.date|date('d/m/Y') }}
+      </li>
+    {% else %}
+      <li>Pas (encore !) de manger</li>
+    {% endfor %}
+
+  </ul>
+ 
+{% endblock %}
