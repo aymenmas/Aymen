@@ -13,9 +13,13 @@ espritadmin_modifier:
     pattern: /modifier/{id}
     defaults:  { _controller: EspritAdminBundle:Admin:modifier }
     requirements:
-        id:  \d+ 
+        id:  \d+        
 espritadmin_supprimer:
     pattern: /supprimer/{id}
     defaults:  { _controller: EspritAdminBundle:Admin:supprimer }
     requirements:
         id:  \d+ 
+        
+espritmanager_accueil:
+    pattern: /client
+    defaults: { _controller: EspritAdminBundle:Manager:index }

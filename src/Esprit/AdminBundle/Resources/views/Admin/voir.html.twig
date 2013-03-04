@@ -6,6 +6,11 @@
   Lecture d'un article - {{ parent() }}
 {% endblock %}
 {% block espritadmin_body %}
+
+  {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+  <h1>Gestion des Managers</h1>
+ 
+  <hr>
 <h2>
   {# On vérifie qu'une image soit bien associée à l'article #}
   {% if manager.image is not null %}
